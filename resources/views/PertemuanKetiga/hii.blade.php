@@ -1,0 +1,1 @@
+Hii {{$nama." ".$gender." ".$waktu}}
