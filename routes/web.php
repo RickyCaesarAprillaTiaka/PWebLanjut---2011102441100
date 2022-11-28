@@ -23,7 +23,7 @@ use App\Http\Controllers\RombelController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/w', function () {
     return view('welcome');
 });
 
