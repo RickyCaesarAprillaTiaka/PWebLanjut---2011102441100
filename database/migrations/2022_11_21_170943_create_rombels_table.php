@@ -18,6 +18,7 @@ class CreateRombelsTable extends Migration
             $table->string('nama_rombel');
             $table->integer('wali_kelas');
             $table->integer('admin_id');
+            $table->integer('sp_id');
             $table->timestamps();
         });
     }

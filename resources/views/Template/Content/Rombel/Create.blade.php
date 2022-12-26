@@ -23,6 +23,12 @@
             @csrf
 
             Nama Rombel : <input type="text" name="nama_rombel"><br>
+            Satuan Pendidikan : 
+            <select name="sp_id">
+                @foreach ($data_satuan_pendidikans as $data)
+                <option value="{{$data->id}}">{{$data->satuan_pendidikan}}</option>
+                @endforeach
+            </select> <br>
             Wali Kelas : 
             <select name="wali_kelas">
                 @foreach ($data_gurus as $data)

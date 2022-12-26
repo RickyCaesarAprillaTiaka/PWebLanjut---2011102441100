@@ -22,7 +22,7 @@
         <form action="{{route('peserta_didik.store')}}" method="post">
             @csrf
 
-            Nama Rombel : <input type="text" name="nama_pd"><br>
+            Nama Peserta Didik : <input type="text" name="nama_pd"><br>
             Kelas : <input type="text" name="kelas"><br>
             Rombel : 
             <select name="rombel_id">

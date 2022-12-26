@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PesertaDidik;
 use App\Models\Rombel;
+use App\Models\SatuanPendidikan;
 use Illuminate\Http\Request;
 
 class PesertaDidikController extends Controller
@@ -47,11 +48,14 @@ class PesertaDidikController extends Controller
             'kelas' => 'required',
             'rombel_id' => 'required',
         ]);
+
+        $id_sp = Rombel::find($request->rombel_id)->sp_id;
         
         $create = PesertaDidik::create([
             'nama_pd' => $request->nama_pd,
             'kelas' => $request->kelas,
             'rombel_id' => $request->rombel_id,
+            'sp_id' => $id_sp,
         ]);
 
         return redirect()->route('peserta_didik.index');

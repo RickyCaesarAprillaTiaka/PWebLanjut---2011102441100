@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rombel;
 use App\Models\Guru;
+use App\Models\SatuanPendidikan;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -30,8 +31,10 @@ class RombelController extends Controller
     public function create()
     {
         $data_gurus = Guru::all();
+        $data_satuan_pendidikans = SatuanPendidikan::all();
         return view('Template.Content.Rombel.Create', [
             'data_gurus' => $data_gurus,
+            'data_satuan_pendidikans' => $data_satuan_pendidikans,
         ]);
     }
 
@@ -52,6 +55,7 @@ class RombelController extends Controller
             'nama_rombel' => $request->nama_rombel,
             'wali_kelas' => $request->wali_kelas,
             'admin_id' => Auth::id(),
+            'sp_id' => $request->sp_id,
         ]);
 
         return redirect()->route('rombel.index');

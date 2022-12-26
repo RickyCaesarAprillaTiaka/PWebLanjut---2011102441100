@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\SatuanPendidikan;
+use App\Models\Guru;
+use App\Models\Rombel;
+use App\Models\PesertaDidik;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -15,8 +19,16 @@ class DashboardController extends Controller
     public function index()
     {
         $data_users = User::all();
+        $count_sp = SatuanPendidikan::count();
+        $count_gr = Guru::count();
+        $count_rombel = Rombel::count();
+        $count_pd = PesertaDidik::count();
         return view('Template.Content.Dashboard.Main', [
-            'data_users' => $data_users
+            'data_users' => $data_users,
+            'count_sp' => $count_sp,
+            'count_gr' => $count_gr,
+            'count_rombel' => $count_rombel,
+            'count_pd' => $count_pd,
         ]);
     }
 

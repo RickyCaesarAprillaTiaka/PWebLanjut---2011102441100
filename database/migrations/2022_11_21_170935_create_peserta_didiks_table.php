@@ -18,6 +18,7 @@ class CreatePesertaDidiksTable extends Migration
             $table->string('nama_pd');
             $table->string('kelas');
             $table->integer('rombel_id');
+            $table->integer('sp_id');
             $table->timestamps();
         });
     }

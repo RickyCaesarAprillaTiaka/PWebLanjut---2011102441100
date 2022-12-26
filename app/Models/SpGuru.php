@@ -18,4 +18,9 @@ class SpGuru extends Model
     ];
 
     public $timestamps = false;
+
+    public function satuanPendidikanGuru()
+    {
+        return $this->belongsTo(Guru::class, 'guru_id');
+    }
 }

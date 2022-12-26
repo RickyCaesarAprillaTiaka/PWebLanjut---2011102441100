@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\SatuanPendidikan;
 use App\Models\KabupatenKota;
+use App\Models\SpGuru;
+use App\Models\PesertaDidik;
+use App\Models\Rombel;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -70,8 +73,14 @@ class SatuanPendidikanController extends Controller
     public function show($id)
     {
         $satuan_pendidikan = SatuanPendidikan::find($id);
+        $data_gurus = SpGuru::where('sp_id', $satuan_pendidikan->id)->get();
+        $data_peserta_didiks = PesertaDidik::where('sp_id', $satuan_pendidikan->id)->get();
+        $data_rombels = Rombel::where('sp_id', $satuan_pendidikan->id)->get();
         return view('Template.Content.SatuanPendidikan.Show', [
             'satuan_pendidikan' => $satuan_pendidikan,
+            'data_gurus' => $data_gurus,
+            'data_peserta_didiks' =>$data_peserta_didiks,
+            'data_rombels' =>$data_rombels,
         ]);
     }
 

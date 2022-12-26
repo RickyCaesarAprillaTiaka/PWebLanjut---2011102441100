@@ -14,7 +14,8 @@ class PesertaDidik extends Model
     protected $fillable = [
         'nama_pd',
         'kelas',
-        'rombel_id'
+        'rombel_id',
+        'sp_id'
     ];
 
     public $timestamps = true;
