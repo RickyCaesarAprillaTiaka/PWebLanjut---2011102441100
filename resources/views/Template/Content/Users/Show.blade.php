@@ -13,7 +13,7 @@
             Email : {{$user->email}}<br>
             Nama Lengkap : {{$user->nama_lengkap}}<br>
             No Hp : {{$user->no_hp}}<br>
-            Level : {{$user->email}}
+            Level : {{$user->level_user}}
     </div>
 </div>
 

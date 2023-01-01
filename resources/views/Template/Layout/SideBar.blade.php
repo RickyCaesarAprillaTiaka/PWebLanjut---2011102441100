@@ -28,12 +28,15 @@
     </div>
 
     <!-- Nav Item - PWebLanjut -->
+    @if (Auth::user()->level_user == 0)
     <li class="nav-item {{route('user.index') == url()->current() ? 'active':''}}">
         <a class="nav-link" href="{{route('user.index')}}">
             <i class="fas fa-users"></i>
             <span>Users</span></a>
     </li>
+    @endif
 
+    @if (Auth::user()->level_user == 0 || Auth::user()->level_user == 1)
     <li class="nav-item {{route('kabupaten_kota.index') == url()->current() ? 'active':''}}">
         <a class="nav-link" href="{{route('kabupaten_kota.index')}}">
             <i class="fas fa-map-pin"></i>
@@ -63,9 +66,8 @@
             <i class="fas fa-book-reader"></i>
             <span>Peserta Didik</span></a>
     </li>
-
+    @endif
     
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
